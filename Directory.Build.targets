@@ -1,0 +1,33 @@
+<Project>
+  <ItemGroup>
+    <VertexShader Include="shaders/shader.vert" />
+    <FragmentShader Include="shaders/shader.frag" />
+  </ItemGroup>
+
+  <Target Name="BuildVulkanShader" AfterTargets="Build">
+    <PropertyGroup>
+      <!-- 直接在 shaders 目录下输出 -->
+      <ShaderOutputPath>shaders</ShaderOutputPath>
+    </PropertyGroup>
+
+    <Message Text="===== 开始编译着色器 =====" Importance="high" />
+    <Message Text="顶点着色器: @(VertexShader)" Importance="high"/>
+    <Message Text="片段着色器: @(FragmentShader)" Importance="high"/>
+
+    <!-- 验证 glslc 是否可用 -->
+    <Exec Command="glslc --version" ContinueOnError="false">
+      <Output TaskParameter="ExitCode" PropertyName="GlsclExitCode"/>
+    </Exec>
+    <Error Text="glslc 未安装，请运行: sudo apt install glslang-tools"
+           Condition="'$(GlsclExitCode)' != '0'" />
+
+    <!-- 编译着色器 -->
+    <Exec Command="glslc &quot;%(VertexShader.FullPath)&quot; -o &quot;%(VertexShader.RelativeDir)/vert.spv&quot;"
+          Condition="'@(VertexShader)' != ''" />
+
+    <Exec Command="glslc &quot;%(FragmentShader.FullPath)&quot; -o &quot;%(FragmentShader.RelativeDir)/frag.spv&quot;"
+          Condition="'@(FragmentShader)' != ''" />
+
+    <Message Text="===== 着色器编译完成 =====" Importance="high" />
+  </Target>
+</Project>

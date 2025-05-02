@@ -1,0 +1,5 @@
+set(OpenGL_GL_PREFERENCE "GLVND")
+if(POLICY CMP0072)
+  cmake_policy(SET CMP0072 NEW)
+endif()
+set(STB_INCLUDE_DIR "/nix/store/k22sfp28nd6sr28k598gx8p2acgk5gik-stb-unstable-2023-01-29/include")
