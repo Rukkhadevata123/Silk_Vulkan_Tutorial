@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17_SwapChainRecreation", "1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21_IndexBuffer", "21_IndexBuffer\21_IndexBuffer.csproj", "{DA04FED9-0E79-4226-BF3B-C9497E7583DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23_DescriptorSets", "23_DescriptorSets\23_DescriptorSets.csproj", "{B5FA8CA1-5762-4D37-86E3-4653E8D21324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{DA04FED9-0E79-4226-BF3B-C9497E7583DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA04FED9-0E79-4226-BF3B-C9497E7583DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA04FED9-0E79-4226-BF3B-C9497E7583DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5FA8CA1-5762-4D37-86E3-4653E8D21324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5FA8CA1-5762-4D37-86E3-4653E8D21324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5FA8CA1-5762-4D37-86E3-4653E8D21324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5FA8CA1-5762-4D37-86E3-4653E8D21324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
